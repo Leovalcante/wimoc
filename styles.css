@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(
+        -45deg,
+        #a193d9,
+        #7a6aa9,
+        #56437c,
+        #331f51,
+        #140029
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    color: whitesmoke !important;
+}
+input {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: whitesmoke !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-container {
+    padding: 2rem;
+}
+
+ul.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-color: white;
+}
+.dropdown-item {
+    color: whitesmoke !important;
+    cursor: pointer;
+}
+.dropdown-item:hover {
+    color: black !important;
+}
+.dropdown-item:active {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    color: black !important;
+}
+
+.notice {
+    align-self: center;
+}
+
+#search-category-button {
+    min-width: 166px;
+}
+
+#cwe-list {
+    position: relative;
+    max-height: 60vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
