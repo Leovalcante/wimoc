@@ -32,6 +32,10 @@ function setResult(category, cwe) {
     $("#chosen-cwe").text(cwe);
 }
 
+function escapeQuotes(string) {
+    return string.replaceAll("'", "\\'");
+}
+
 $("#vuln-name").keyup((event) => {
     if (event.key == "Escape") return;
 
@@ -56,12 +60,14 @@ $("#vuln-name").keyup((event) => {
     });
     if (!!Object.keys(filteredData).length) {
         $.each(filteredData, (category, cwes) => {
-            console.log(category, " - ", cwes);
+            // console.log(category, " - ", cwes);
             for (const cwe of cwes) {
-                console.log(
-                    `<div class="dropdown-item" onclick="setCategory('${category}')">${cwe}</div>`
-                );
-                output += `<div class="dropdown-item" onclick="setResult('${category}', '${cwe}')">${cwe}</div>`;
+                // console.log(
+                //     `<div class="dropdown-item" onclick="setCategory('${category}')">${cwe}</div>`
+                // );
+                output += `<div class="dropdown-item" onclick="setResult('${category}', '${escapeQuotes(
+                    cwe
+                )}')">${cwe}</div>`;
             }
         });
     } else {
